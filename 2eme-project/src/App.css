@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Oswald&family=Saira+Condensed:wght@700&display=swap');
+
+h1,h2,h3,h4,h5,h6 {
+
+  font-family: 'Saira Condensed', sans-serif;
+}
