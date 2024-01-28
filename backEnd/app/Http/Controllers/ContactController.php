@@ -12,7 +12,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return Contact::select (['name' , 'email' ,'phoneNumber' , 'subject'])->get() ; 
+        return Contact::select (['name' , 'email' , 'subject' , 'created_at'])->get() ; 
     }
 
 

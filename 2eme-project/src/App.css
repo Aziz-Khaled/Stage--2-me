@@ -1,9 +1,186 @@
-.App {
-  text-align: center;
-}
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Oswald&family=Saira+Condensed:wght@700&display=swap');
 
-h1,h2,h3,h4,h5,h6 {
-
-  font-family: 'Saira Condensed', sans-serif;
+body {
+      
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #292b2c;
+  
 }
+/********** common setting **********/
+h2 {
+  font-size: 2.8rem !important;
+  font-weight: 700;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a,  
+button {
+  cursor: pointer;
+}
+
+.jumbotron {
+  margin-bottom: 0 !important;
+}
+
+.atlas-cta {
+  border-radius: 22px !important;
+  padding: 12px 30px !important;
+  font-weight: 700;
+  transition: .3s ease-in-out !important;
+}
+
+.atlas-cta:hover {
+  text-decoration: none;
+  transform: translateY(-5px);
+}
+
+.atlas-cta-wide {
+  width: 100%;
+}
+
+.cta-green {
+  background: #00FFAD;
+  color: #192440;
+}
+
+.cta-green:hover {
+  color: #ffffff;
+  background: #00e69c;
+}
+
+.cta-blue {
+  background: #192440;
+  color: #ffffff;
+}
+
+.cta-blue:hover {
+  color: #ffffff;
+  background: #121a2e;
+}
+
+.cta-ghost {
+  border: 2px solid #192440 !important;
+  color: #192440;
+}
+
+.cta-ghost:hover {
+  color: #ffffff;
+  background: #121a2e;
+}
+
+#banner {
+  background-size: cover;
+
+  padding: 7%;
+}
+
+/********** banner **********/
+#banner header {
+  overflow: hidden;
+}
+
+#banner header img {
+  max-width: 80px;
+}
+
+/********** feature (skew background) **********/
+.feature img {
+  width: 100%;
+  max-width: 480px;
+}
+
+#feature-first {
+  background: linear-gradient(174deg, #ffffff 55%, #00FFAD 0);
+  margin-top: 100px;
+  padding: 100px;
+}
+
+#feature-last {
+  background: #00FFAD;
+}
+
+/********** price table **********/
+#price-table {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+#price-table__premium {
+  background: #192440;
+  color: #ffffff;
+}
+
+#price-table ul li {
+  padding: 5px 0;
+}
+
+/********** contact **********/
+#contact {
+  background-size: cover;
+  padding: 80px;
+}
+
+#contact ul li {
+  padding: 9px ;
+}
+
+#contact form {
+  color: #00FFAD;
+}
+
+#contact form input,
+#contact form textarea {
+  background: transparent;
+  padding: 7px;
+  border: 1px solid #00FFAD;
+  color: #ffffff;
+}
+
+/********** copyright **********/
+#copyright {
+  background: #192440;
+  padding: 2rem 3rem;
+}
+
+#copyright #social-media a {
+  width: 40px;
+  height: 40px;
+  border-radius: 99%;
+  background: #ffffff;
+  transition: .4s ease;
+}
+
+#copyright #social-media a i {
+  color: #192440;
+  font-size: 1.2rem;
+  line-height: 40px;
+}
+
+#copyright #social-media a:hover {
+  background: #00FFAD;
+}
+
+#copyright #social-media a:hover i {
+  color: #ffffff;
+}
+
+/********** RWD **********/
+@media (max-width: 575px) {
+  #banner h1 {
+      font-size: 3.6rem;
+  }
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+}
+
+
+
