@@ -97,11 +97,12 @@ button {
 #feature-first {
   background: linear-gradient(174deg, #ffffff 55%, #00FFAD 0);
   margin-top: 100px;
-  padding: 100px;
+  padding: 146px;
 }
 
 #feature-last {
   background: #00FFAD;
+  padding: 68px;
 }
 
 /********** price table **********/
@@ -184,3 +185,13 @@ button {
 
 
 
+.template-container {
+  display: flex;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 86%;
+    margin-left: 7%;
+    margin-top: 80px;
+}

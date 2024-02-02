@@ -4,17 +4,16 @@ import img1 from "./img/smart-protect-1.jpg";
 import img2 from "./img/smart-protect-1.jpg";
 import img3 from "./img/smart-protect-1.jpg";
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 function Blocks() {
-
-    useEffect(() => {
-        AOS.init();
-      }, []);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <div  >
+    <div>
       <div className="container my-5 py-2">
         <h2 className="text-center font-weight-bold my-5">
           Smartest protection for your site
