@@ -6,6 +6,7 @@ import Price from "./Price";
 import Contact from "./Contact";
 import NavigationBar from "../nav/navbar";
 
+
 function AllComponents() {
   return (
     <div>
@@ -15,6 +16,7 @@ function AllComponents() {
       <Features />
       <Price />
       <Contact />
+      
     </div>
   );
 }

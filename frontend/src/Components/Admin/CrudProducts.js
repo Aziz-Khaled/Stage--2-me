@@ -62,6 +62,21 @@ function CrudProducts() {
       });
   };
 
+
+
+  //delete method : 
+  const deleteProduct = async (id) => {
+    await axios
+      .delete(`http://localhost:8000/api/templates/${id}`)
+      .then((response) => {
+        console.log("Product deleted with success", response.data);
+      window.location.reload()
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+      });
+  };
+
   return (
     <div>
       <NavAdmin />
@@ -70,7 +85,7 @@ function CrudProducts() {
 <div style ={{display :  "flex"  ,  justifyContent:"center" , alignItems : "center"}} >
 <Card style = {{width: "20%"}}>
         <Card.Body>
-          <Form.Group className="mb-3">
+          <Form.Group encType="multipart/form-data" className="mb-3">
             <Form.Label>name : </Form.Label>
             <Form.Control
               type="text"
@@ -136,6 +151,7 @@ function CrudProducts() {
               <th>features</th>
               <th>Price</th>
               <th>image</th>
+              <th>actions</th>
             </tr>
           </thead>
           <tbody>
@@ -152,6 +168,10 @@ function CrudProducts() {
                     src={`http://localhost:8000/${temp.image}`}
                     alt="product"
                   />
+                </td>
+                <td >
+                <Button  variant="success">edit</Button>
+                <Button style ={{marginLeft : "10px"}} variant="danger"onClick={() => deleteProduct(temp.id)}>delete</Button>
                 </td>
               </tr>
             ))}

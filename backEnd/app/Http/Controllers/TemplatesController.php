@@ -34,7 +34,7 @@ class TemplatesController extends Controller
             'description' => 'required',
             'requirements' => 'required',
             'features' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
             'price'=> 'required'
         ]);
 
@@ -42,14 +42,17 @@ class TemplatesController extends Controller
         $image = $request->file('image');
         $imageName = $image->getClientOriginalName(); // Use the original file name
         $path = 'images/templatesPhotos'; // Adjust the path as needed
+
+        $image->storeAs($path, $imageName, 'templatesPhotos');
         
         $template = templates::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'requirements' => $request->input('requirements'),
             'features' => $request->input('features'),
-            'image' => $path.'/'.$imageName, 
             'price' =>$request->input('price'),
+            'image' => $path.'/'.$imageName, 
+            
         ]);
 
     return response()->json([
@@ -79,44 +82,25 @@ class TemplatesController extends Controller
      */
     public function update(Request $request, templates $templates, string $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'image' => 'nullable'
-        ]);
-
-        $templates->fill($request->post())->update();
-
-
-        if ($request->hasFile('image')) {
-            if ($templates->image) {
-                $exist = Storage::disk('public')->exists("images/templatesPhotos/{$templates->image}"); // Adjust the path as needed
-                if ($exist) {
-                    Storage::disk('public')->delete("images/templatesPhotos/{$templates->image}"); // Adjust the path as needed
-                }
-            }
-        }
-        return response()->json([
-            'message' => 'Item updated successfully'
-        ]);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id , templates $template)
-    {
-        if ($template->image) {
-            $exist = Storage::disk('public')->exists("images/templatesPhotos/{$template->image}");
-            if ($exist) {
-                Storage::disk('public')->delete("images/templatesPhotos/{$template->image}");
-            }
-        }
         
-        $template->delete();
-        return response()->json([
-            'message' => 'Item deleted successfully',
-            'deleted_template' => $template
-        ]);
     }
+
+    public function destroy(string $id)
+{
+    $template = templates::findOrFail($id);
+
+    if ($template->image) {
+        $exist = Storage::disk('public')->exists("images/templatesPhotos/{$template->image}");
+        if ($exist) {
+            Storage::disk('public')->delete("images/templatesPhotos/{$template->image}");
+        }
+    }
+
+    $template->delete();
+
+    return response()->json([
+        'message' => 'Template deleted successfully',
+        'deleted_template' => $template
+    ]);
+}
 }

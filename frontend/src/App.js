@@ -7,6 +7,7 @@ import Products from "./Components/newHome/Products";
 import Users from "./Components/Admin/Users";
 import CrudProducts from "./Components/Admin/CrudProducts";
 import ProductDetails from "./Components/newHome/ProductDetails";
+import Footer from "./Components/newHome/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/crudProducts" element={<CrudProducts />} />
         <Route path="/Details/:id" element={<ProductDetails />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

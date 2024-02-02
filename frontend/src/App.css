@@ -195,3 +195,69 @@ button {
     margin-left: 7%;
     margin-top: 80px;
 }
+
+
+.detail-Container {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.productbox {
+	background:#fff;
+	padding:13px;
+	border:1px solid #e4e4e4;
+	margin-bottom:30px;
+}
+.latest-items .productbox {
+	margin-bottom:30px;
+}
+.productbox h1 {
+	display:block;
+	font-size:17px;
+	text-transform:uppercase;
+	margin-top:15px;
+	border-bottom:double medium #eee;
+	padding-bottom:15px;
+	margin-bottom:10px;
+	font-weight:500;
+	color:#333;
+}
+.product-details {
+	padding:6px 0 0 0;
+	text-align:center;
+	color:#444;
+}
+.productbox .price {
+	font-weight:400;
+}
+
+.properties-box {
+	padding:20px 20px 15px 20px;
+	border:1px solid #e4e4e4;
+	margin-top:25px;
+	clear:both;
+	float:none;
+	line-height:1.7;
+}
+
+
+.btn-grad {
+  background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
