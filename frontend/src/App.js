@@ -8,6 +8,7 @@ import Users from "./Components/Admin/Users";
 import CrudProducts from "./Components/Admin/CrudProducts";
 import ProductDetails from "./Components/newHome/ProductDetails";
 import Footer from "./Components/newHome/Footer";
+import Purchase from './Components/newHome/Purchase'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Users" element={<Users />} />
         <Route path="/crudProducts" element={<CrudProducts />} />
         <Route path="/Details/:id" element={<ProductDetails />} />
+        <Route path="/Purchase/:id" element = {<Purchase />} /> 
       </Routes>
       <Footer />
     </div>

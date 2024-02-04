@@ -30,6 +30,7 @@ function CrudProducts() {
     try {
       const res = await axios.get("http://localhost:8000/api/templates");
       seTemplates(res.data);
+      console.log(res.data[5].image)
       
     } catch (error) {
       console.err(error);
@@ -77,6 +78,8 @@ function CrudProducts() {
       });
   };
 
+
+  console.log (templates.image);
   return (
     <div>
       <NavAdmin />

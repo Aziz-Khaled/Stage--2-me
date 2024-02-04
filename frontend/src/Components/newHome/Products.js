@@ -6,6 +6,7 @@ import "../../App.css";
 import { Link } from "react-router-dom";
 
 function Products() {
+  
   const [templates, seTemplates] = useState([]);
 
   useEffect(() => {

@@ -2,7 +2,7 @@
 import axios from "../API/axios";
 import React, { useEffect, useState } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import NavigationBar from "../nav/navbar";
 
 function ProductDetails() {
@@ -28,36 +28,54 @@ function ProductDetails() {
   return (
     <div>
 <NavigationBar/>
+<div style ={{padding : "50px"}}>
+<div class="card">
+      <div class="card__title">
+	  <Link to ="/Templates">  <div class="icon">
+         <i class="fa fa-arrow-left"></i>
+        </div>
+		</Link>
+        <h3>New products</h3>
+      </div>
+      <div class="card__body">
+        <div class="half">
+          <div class="featured_text">
+            <h2>{selectedTemplate.name}</h2>
 
-<div className="container toparea">
-	<div className="row">
-		<div className="col-md-8">
-			<div className="productbox">
-				<img  src={`http://localhost:8000/${selectedTemplate.image}`} style = {{width :"100%"}} alt ="productImage"/>
-				<div className="clearfix">
-				</div>
-				<br/>
-				<div className="product-details text-left">
-					<p>
-						Your description here. Serenity is a highly-professional & modern website theme crafted with you, the user, in mind. This light-weight theme is generous, built with custom types and enough shortcodes to customize each page according to your project. You will notice some examples of pages in demo, but this theme can do much more.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div className="col-md-4">
-		<button className="btn-grad">Purshase</button>
-			<div className="properties-box">
-				<ul className="unstyle">
-					<li><b className="propertyname">name:</b> {selectedTemplate.name}</li>
-					<li><b className="propertyname">requirements : </b> {selectedTemplate.description}</li>
-					<li><b className="propertyname">features :</b>{selectedTemplate.features}</li>
-					<li><b className="propertyname">Price : :</b> {selectedTemplate.price}$</li>
-				</ul>
-			</div>
-		</div>
+            <p class="price">{selectedTemplate.price}$</p>
+          </div>
+          <div class="image">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg" alt=""/>
+          </div>
+        </div>
+        <div class="half">
+          <div class="description">
+            <p>{selectedTemplate.description}</p>
+          </div>
+          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+          <div class="reviews">
+            <ul class="stars">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+            </ul>
+            <span>(64 reviews)</span>
+          </div>
+        </div>
+      </div>
+      <div class="card__footer">
+        <div class="recommend">
+          <p>Recommended by</p>
+          <h3>Andrew Palmer</h3>
+        </div>
+        <div class="action">
+    <Link to={`/Purchase/${id}`}>	<button type="button">Add to cart</button>	</Link>      
+        </div>
+      </div>
+    </div>
 	</div>
-</div>
-
     </div>
   );
 }

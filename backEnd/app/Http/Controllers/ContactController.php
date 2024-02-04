@@ -25,7 +25,7 @@ class ContactController extends Controller
             'phoneNumber' => 'required',
             'subject' => 'required',
         ]);
-
+        
         $contact = Contact::create($request->only(['name', 'email', 'phoneNumber', 'subject']));
         return response()->json([
             $contact, 201 ,

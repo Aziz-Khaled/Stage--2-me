@@ -10,9 +10,7 @@ use App\Models\templates;
 
 class TemplatesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         return templates::select('id', 'name',	'description',	'requirements' , 'features' , 'image' , 'price')->get();
@@ -38,12 +36,10 @@ class TemplatesController extends Controller
             'price'=> 'required'
         ]);
 
-
         $image = $request->file('image');
         $imageName = $image->getClientOriginalName(); // Use the original file name
         $path = 'images/templatesPhotos'; // Adjust the path as needed
-
-        $image->storeAs($path, $imageName, 'templatesPhotos');
+        $image->move($path, $imageName);
         
         $template = templates::create([
             'name' => $request->input('name'),
@@ -52,7 +48,6 @@ class TemplatesController extends Controller
             'features' => $request->input('features'),
             'price' =>$request->input('price'),
             'image' => $path.'/'.$imageName, 
-            
         ]);
 
     return response()->json([
