@@ -32,12 +32,7 @@ function Price() {
               <li>5 team Members</li>
               <li>Limited Support</li>
             </ul>
-            <a
-              href="#"
-              className="btn my-4 font-weight-bold atlas-cta cta-ghost"
-            >
-              Get Free
-            </a>
+           
           </div>
           <div
             data-aos="fade-up"
@@ -56,9 +51,7 @@ function Price() {
               <li>25 team Members</li>
               <li>Limited Support</li>
             </ul>
-            <a className="btn my-4 font-weight-bold atlas-cta cta-green">
-              Get Free
-            </a>
+
           </div>
           <div
             data-aos="fade-left"
@@ -77,9 +70,7 @@ function Price() {
               <li>Unlimited Members</li>
               <li>Unlimited Support</li>
             </ul>
-            <a className="btn my-4 font-weight-bold atlas-cta cta-ghost">
-              Get Free
-            </a>
+
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ use App\Http\Controllers\MailController;
 |
 */
 
-
+Route::put('/templates/{id}', [TemplatesController::class, 'update']);
 Route::get('/templates/{id}', [TemplatesController::class, 'showById']);
 Route::apiResource('contacts', ContactController::class);
 Route::apiResource('templates', TemplatesController::class);

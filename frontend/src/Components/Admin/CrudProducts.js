@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Form, Card } from "react-bootstrap";
+import { Button, Form, Card , Modal } from "react-bootstrap";
 import axios from "../API/axios";
 import NavAdmin from "../nav/NavAdmin";
 
@@ -30,8 +30,6 @@ function CrudProducts() {
     try {
       const res = await axios.get("http://localhost:8000/api/templates");
       seTemplates(res.data);
-      console.log(res.data[5].image)
-      
     } catch (error) {
       console.err(error);
     }
@@ -79,7 +77,13 @@ function CrudProducts() {
   };
 
 
-  console.log (templates.image);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+
   return (
     <div>
       <NavAdmin />
@@ -173,7 +177,57 @@ function CrudProducts() {
                   />
                 </td>
                 <td >
-                <Button  variant="success">edit</Button>
+                <Button variant="success" onClick={handleShow}>Edit</Button>
+                <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit product : </Modal.Title>
+        </Modal.Header>
+<Modal.Body>
+<Form>
+
+      <Form.Group className="mb-3" >
+        <Form.Label>name :</Form.Label>
+        <Form.Control type="email"  />
+      </Form.Group>
+
+      <Form.Group className="mb-3" >
+        <Form.Label>description :</Form.Label>
+        <Form.Control type="email"  />
+      </Form.Group>
+
+      <Form.Group className="mb-3" >
+        <Form.Label>requirements :</Form.Label>
+        <Form.Control type="email"  />
+      </Form.Group>
+
+      <Form.Group className="mb-3" >
+        <Form.Label>features :</Form.Label>
+        <Form.Control type="email"  />
+      </Form.Group>
+
+      <Form.Group className="mb-3" >
+        <Form.Label>price :</Form.Label>
+        <Form.Control type="email"  />
+      </Form.Group>
+
+      <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>image file input : </Form.Label>
+            <Form.Control type="file" />
+          </Form.Group>
+
+</Form>
+
+
+</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
                 <Button style ={{marginLeft : "10px"}} variant="danger"onClick={() => deleteProduct(temp.id)}>delete</Button>
                 </td>
               </tr>

@@ -77,7 +77,38 @@ class TemplatesController extends Controller
      */
     public function update(Request $request, templates $templates, string $id)
     {
-        
+        $template = templates::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'requirements' => 'required',
+            'features' => 'required',
+            'price' => 'required',
+            'image' => 'image',
+        ]);
+    
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName(); 
+            $path = 'images/templatesPhotos'; 
+            $image->move($path, $imageName);
+            
+        }
+    
+        $template->name = $request->input('name');
+        $template->description = $request->input('description');
+        $template->requirements = $request->input('requirements');
+        $template->features = $request->input('features');
+        $template->price = $request->input('price');
+        $template->image = $path.'/'.$imageName;
+
+        $template->save();
+    
+        return response()->json([
+            'data' => $template,
+            'message' => 'Template updated successfully'
+        ]);
     }
 
     public function destroy(string $id)

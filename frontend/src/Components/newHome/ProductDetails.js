@@ -35,7 +35,7 @@ function ProductDetails() {
          <i class="fa fa-arrow-left"></i>
         </div>
 		</Link>
-        <h3>New products</h3>
+        
       </div>
       <div class="card__body">
         <div class="half">
@@ -45,7 +45,7 @@ function ProductDetails() {
             <p class="price">{selectedTemplate.price}$</p>
           </div>
           <div class="image">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg" alt=""/>
+            <img src={`http://localhost:8000/${selectedTemplate.image}`} style = {{height : "20rem"}} alt=""/>
           </div>
         </div>
         <div class="half">

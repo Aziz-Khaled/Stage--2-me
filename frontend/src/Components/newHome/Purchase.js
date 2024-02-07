@@ -5,6 +5,8 @@ import axios from '../API/axios'
 import { useParams } from "react-router-dom";
 
 
+
+
 function Purchase() {
   const { id } = useParams();
   const [details, setDetails] = useState({}); // Change to an object instead of an array
@@ -33,13 +35,6 @@ function Purchase() {
           <NavigationBar />
      <div style ={{padding: '50px'}}>
        <div className="pruchaseCard">
-        <div className="leftside">
-          <img
-            src="https://i.pinimg.com/originals/18/9d/dc/189ddc1221d9c1c779dda4ad37a35fa1.png"
-            className="product"
-            alt="Shoes"
-          />
-        </div>
         <div className="rightside">
           <form action="">
             <h1>CheckOut</h1>

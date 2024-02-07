@@ -6,7 +6,7 @@
 	display: flex;
     flex-direction: column;
     background-color: #DFDBE5;
-    background-image: url("https://wallpaperaccess.com/full/3063067.png");
+    align-items: center;
     color:#963E7B;
 }
 
@@ -35,10 +35,9 @@
 }
 
 .product {
-    object-fit: cover;
-	width: 20em;
-    height: 20em;
-    border-radius: 100%;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
 }
 
 .rightside {
@@ -46,7 +45,8 @@
 	width: 35rem;
 	border-bottom-right-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
-    padding: 1rem 2rem 3rem 3rem;
+    padding: 5rem 2rem 3rem 3rem;
+    margin: auto;
 }
 
 .inputName{

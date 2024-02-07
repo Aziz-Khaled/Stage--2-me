@@ -27,8 +27,8 @@ function Products() {
       <NavigationBar />
       <div className="template-container">
         {templates.map((temp) => (
-          <Card style={{ width: "18rem" , margin : "10px" }} key={temp.id}>
-            <Card.Img variant="top" src={`http://localhost:8000/${temp.image}`} style ={{width: "18rem"}} />
+          <Card style={{ width: "15rem" , margin : "10px" }} key={temp.id}>
+            <Card.Img variant="top" src={`http://localhost:8000/${temp.image}`} style ={{width : "100%" , height : "25rem"}} />
             <Card.Body>
               <Card.Title>{temp.name}</Card.Title>
               <Card.Text>{temp.description}</Card.Text>
