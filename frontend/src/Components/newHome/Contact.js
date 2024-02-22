@@ -11,7 +11,7 @@ function Contact() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [subject, setSubject] = useState("");
 
-  // state of conditions ion inputs
+
 
   const submitFunction = async (e) => {
     e.preventDefault();
@@ -51,13 +51,14 @@ function Contact() {
             <div className="col-md-6 text-white">
               <h2 className="font-weight-bold">Contact Us</h2>
               <p className="my-4">
-                Te iisque labitur eos, nec sale argumentum scribentur,
-                <br /> augue disputando in vim. Erat fugit sit at, ius lorem.
+              If you have any questions, need assistance,
+              or want to learn more about our services,
+              please reach out to us using the information provided below. We're eager to hear from you and assist in any way we can.
               </p>
               <ul className="list-unstyled">
-                <li>Email : company_email@com</li>
-                <li>Phone : 361-688-5824</li>
-                <li>Address : 4826 White Avenue, Corpus Christi, Texas</li>
+                <li>Email :DevForge@assist.com</li>
+                <li>Phone : 54-512-047</li>
+                <li>Address : 8050 Cité El Wafa, Nabeul , Tunisia</li>
               </ul>
             </div>
             <div className="col-md-6">

@@ -3,68 +3,40 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-
-    
+    public $to;
     public $subject;
     public $message;
+
     /**
      * Create a new message instance.
+     *
+     * @param string $to
+     * @param string $subject
+     * @param string $message
      */
-    public function __construct($subject, $message)
+    public function __construct($to, $subject, $message)
     {
+        $this->to = $to;
         $this->subject = $subject;
         $this->message = $message;
     }
 
     /**
-     * Get the message envelope.
+     * Build the message.
+     *
+     * @return $this
      */
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Send Mail',
-        );
-    }
-
-    /* build the message */
-
     public function build()
     {
-        $html = "<html><head><title>{$this->subject}</title></head><body>";
-        $html .= "<h1>{$this->subject}</h1>";
-        $html .= "<p>{$this->message}</p>";
-        $html .= "</body></html>";
-
-        return $this->subject($this->subject)
-            ->html($html);
-    }
-    /*
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'emails.send-mail',
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
+        return $this->from('mouhamedazizkhaled@gmail.com')
+                    ->subject($this->subject)
+                    ->html("<p>{$this->message}</p>");
     }
 }

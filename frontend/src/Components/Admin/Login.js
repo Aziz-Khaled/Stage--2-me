@@ -26,7 +26,7 @@ function Login() {
   };
   return (
     <div>
-      <div className="container">
+      {/*    <div className="container">
         <div className="row">
           <div className="col-md-6 offset-md-3">
             <h2 className="text-center text-dark mt-5">Login Form</h2>
@@ -96,7 +96,65 @@ function Login() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
+
+
+
+<h1 style={{ textAlign: 'center' }}>Login</h1>
+      <form style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '5px' , marginBottom: "325px" , marginTop: "93px" }}>
+        <label htmlFor="nom" style={{ display: 'block', marginBottom: '5px' }}>
+          name:
+        </label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          required
+          onChange={(e) => setName(e.target.value)}
+          style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '3px', marginBottom: '10px' }}
+        />
+        <br />
+        <label htmlFor="prenom" style={{ display: 'block', marginBottom: '5px' }}>
+          email:
+        </label>
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          required
+          onChange={(e) => setEmail(e.target.value)}
+          style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '3px', marginBottom: '10px' }}
+        />
+        <br />
+        <label htmlFor="mp" style={{ display: 'block', marginBottom: '5px' }}>
+          password:
+        </label>
+        <input
+          type="password"
+          id="mp"
+          name="mp"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+          style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '3px', marginBottom: '10px' }}
+        />
+        <br />
+        <button
+          onClick={handlelogin}
+          type="submit"
+          style={{
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            padding: '10px 20px',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            marginRight: '10px',
+          }}
+        >
+          Valider
+        </button>
+      </form>
+
     </div>
   );
 }

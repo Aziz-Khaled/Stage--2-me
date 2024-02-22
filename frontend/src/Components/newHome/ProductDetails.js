@@ -32,7 +32,7 @@ function ProductDetails() {
 <div class="card">
       <div class="card__title">
 	  <Link to ="/Templates">  <div class="icon">
-         <i class="fa fa-arrow-left"></i>
+        <i class="fa fa-arrow-left"></i>
         </div>
 		</Link>
         
@@ -67,8 +67,7 @@ function ProductDetails() {
       </div>
       <div class="card__footer">
         <div class="recommend">
-          <p>Recommended by</p>
-          <h3>Andrew Palmer</h3>
+          
         </div>
         <div class="action">
     <Link to={`/Purchase/${id}`}>	<button type="button">Add to cart</button>	</Link>      

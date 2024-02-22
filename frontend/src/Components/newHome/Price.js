@@ -1,18 +1,21 @@
 import React from "react";
+import "../../App.css";
+import {Link} from 'react-router-dom'
 import img1 from "./img/client-1.png";
 import img2 from "./img/client-2.png";
 import img3 from "./img/client-3.png";
 import img4 from "./img/client-4.png";
 import img5 from "./img/client-5.png";
 import img6 from "./img/client-6.png";
-import "../../App.css";
-
+import Image1 from "./img/product1.jpg"
+import Image2 from "./img/product2.jpg"
+import Image3 from "./img/product3.png"
 function Price() {
   return (
     <div>
       <div className="container my-5 py-2" id="price-table">
         <h2 className="text-center font-weight-bold d-block mb-3">
-          Check our pricing
+          Check our Products
         </h2>
         <div className="row">
           <div
@@ -22,17 +25,7 @@ function Price() {
             data-aos-once="true"
             className="col-md-4 text-center py-4 mt-5"
           >
-            <h4 className="my-4">STARTUP</h4>
-            <p className="font-weight-bold">
-              $ <span className="display-2 font-weight-bold">0</span> / MO.
-            </p>
-            <ul className="list-unstyled">
-              <li>Up to 5 Documents</li>
-              <li>Up to 3 Reviews</li>
-              <li>5 team Members</li>
-              <li>Limited Support</li>
-            </ul>
-           
+          <img style ={{  display: "block", margin: "0 auto" ,width : "90%"}} src = {Image2} alt = "productimage" />
           </div>
           <div
             data-aos="fade-up"
@@ -41,17 +34,7 @@ function Price() {
             className="col-md-4 text-center py-4 mt-5 rounded"
             id="price-table__premium"
           >
-            <h4 className="my-4">PREMIUM</h4>
-            <p className="font-weight-bold">
-              $ <span className="display-2 font-weight-bold">10</span> / MO.
-            </p>
-            <ul className="list-unstyled">
-              <li>Up to 15 Documents</li>
-              <li>Up to 10 Reviews</li>
-              <li>25 team Members</li>
-              <li>Limited Support</li>
-            </ul>
-
+            <img style ={{  display: "block", margin: "0 auto" ,width : "16rem"}} src = {Image1} alt = "productimage" />
           </div>
           <div
             data-aos="fade-left"
@@ -60,24 +43,14 @@ function Price() {
             data-aos-once="true"
             className="col-md-4 text-center py-4 mt-5"
           >
-            <h4 className="my-4">PROFESSIONAL</h4>
-            <p className="font-weight-bold">
-              $ <span className="display-2 font-weight-bold">30</span> / MO.
-            </p>
-            <ul className="list-unstyled">
-              <li>Unlimited Documents</li>
-              <li>Unlimited Reviews</li>
-              <li>Unlimited Members</li>
-              <li>Unlimited Support</li>
-            </ul>
-
+          <img style ={{  display: "block", margin: "0 auto" , width : "75%"}} src = {Image3} alt = "productimage" />
           </div>
         </div>
       </div>
-
+    <Link to ="/Templates"><button className ="btn-grad">  See more </button></Link>  
       <div
         className="jumbotron jumbotron-fluid"
-        style={{ padding: "50px", backgroundColor: "#eceeef" }}
+        style={{ padding: "50px", backgroundColor: "#eceeef"  , marginTop: "30px"}}
       >
         <div className="container">
           <div className="row">

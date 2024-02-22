@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\AchatController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
@@ -6,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TemplatesController;
 use App\Http\Controllers\MailController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,11 +21,17 @@ use App\Http\Controllers\MailController;
 |
 */
 
+
 Route::put('/templates/{id}', [TemplatesController::class, 'update']);
 Route::get('/templates/{id}', [TemplatesController::class, 'showById']);
 Route::apiResource('contacts', ContactController::class);
 Route::apiResource('templates', TemplatesController::class);
 Route::post('send-email', [MailController::class, 'sendEmail']);
+/* achat api route */
+Route::get('achat_Get', [AchatController::class, 'index']);
+Route::post('achat_Store', [AchatController::class, 'store']);
+
+
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('api-session')

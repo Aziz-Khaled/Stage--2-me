@@ -2,32 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Mail\SendMail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Validator;
+
+
 class MailController extends Controller
 {
-    public function sendEmail(Request $request)
-    {
 
-        $validator = Validator::make($request->all(), [
+    public function send(Request $request) {
+        
+        $request->validate([
             'to' => 'required|email',
             'subject' => 'required|string',
             'message' => 'required|string',
         ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+    
+        $email = $request->input('to');
+        $sujet = $request->input('subject');
+        $contenu = $request->input('message');
+    
+        if($this->isOnline()){
+    
+            $mail = new SendMail($email, $sujet, $contenu);
+    
+            // Utilize the from method to set the sender
+            $mail->from($email , $email);
+            $mail->replyTo($email, $email);
+            
+            // Send the email using send() after setting the sender
+            Mail::to('mouhamedazizkhaled@gmail.com')->send($mail);
+    
+            return redirect()->back()->with('success','Votre email a été envoyé avec succès!');
         }
-
-        $to = $request->input('to');
-        $subject = $request->input('subject');
-        $message = $request->input('message');
-
-        Mail::to($to)->send(new SendMail($subject, $message));
-
-        return response()->json(['message' => 'Email sent successfully']) ; 
-
+        else{
+            return redirect()->back()->withInput()->with('Error','Check your internet connection');
+        }
+    }
+    
+    public function isOnline($site="https://www.youtube.com/") {
+        if(@fopen($site,"r")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

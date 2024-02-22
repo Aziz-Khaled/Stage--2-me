@@ -75,35 +75,35 @@ class TemplatesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, templates $templates, string $id)
+    public function update(Request $request, $id)
     {
-        $template = templates::findOrFail($id);
-
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'requirements' => 'required',
-            'features' => 'required',
-            'price' => 'required',
-            'image' => 'image',
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'sometimes',
+            'description' => 'sometimes',
+            'requirements' => 'sometimes',
+            'features' => 'sometimes',
+            'price' => 'sometimes',
+            'image' => 'nullable',
         ]);
     
+        // Find the template by ID
+        $template = Templates::findOrFail($id);
+    
+        // Update template attributes if provided in the request
+        $template->update($validatedData);
+    
+        // Handle image upload
         if ($request->hasFile('image')) {
+
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName(); 
             $path = 'images/templatesPhotos'; 
             $image->move($path, $imageName);
+            $template->image = $path.'/'.$imageName;
+            $template->save();
             
         }
-    
-        $template->name = $request->input('name');
-        $template->description = $request->input('description');
-        $template->requirements = $request->input('requirements');
-        $template->features = $request->input('features');
-        $template->price = $request->input('price');
-        $template->image = $path.'/'.$imageName;
-
-        $template->save();
     
         return response()->json([
             'data' => $template,

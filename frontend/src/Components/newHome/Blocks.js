@@ -16,7 +16,7 @@ function Blocks() {
     <div>
       <div className="container my-5 py-2">
         <h2 className="text-center font-weight-bold my-5">
-          Smartest protection for your site
+          OUR EXPERTISE
         </h2>
         <div className="row">
           <div
@@ -27,8 +27,8 @@ function Blocks() {
             className="col-md-4 text-center"
           >
             <img src={img1} alt="Anti-spam" className="mx-auto" />
-            <h4>Anti-spam</h4>
-            <p>Lorem ipsum dolor sit amet porro his no his deleniti</p>
+            <h4>paid referencing</h4>
+            
           </div>
           <div
             data-aos="fade-up"
@@ -38,8 +38,7 @@ function Blocks() {
             className="col-md-4 text-center"
           >
             <img src={img2} alt="Phishing Detect" className="mx-auto" />
-            <h4>Phishing Detect</h4>
-            <p>Ne error antiopam usu. Sed vocen concludaturque ea</p>
+            <h4>graphic design</h4>
           </div>
           <div
             data-aos="fade-up"
@@ -49,8 +48,7 @@ function Blocks() {
             className="col-md-4 text-center"
           >
             <img src={img3} alt="Smart Scan" className="mx-auto" />
-            <h4>Smart Scan</h4>
-            <p>Et usu ocurreret elaboraret doctus prodesse assueverit.</p>
+            <h4>Digital Marketing</h4>
           </div>
         </div>
       </div>

@@ -62,6 +62,10 @@ function Users() {
   return (
     <div>
       <NavAdmin />
+      <div style = {{ marginTop : "5%"  , width : "30%" , margin : "auto"}}>
+    <h1 style ={{textAlign : "center"}}>Client Table</h1>
+    <hr/>
+      </div>
       <div className="table-wrapper">
         <table className="fl-table">
           <thead>

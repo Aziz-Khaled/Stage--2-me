@@ -24,9 +24,9 @@ function Features() {
             >
               <h2 className="font-weight-bold">Take a look inside</h2>
               <p className="my-4">
-                Te iisque labitur eos, nec sale argumentum scribentur no,
-                <br /> augue disputando in vim. Erat fugit sit at, ius lorem
-                deserunt deterruisset no.
+              Step into excellence with us. Experience seamless solutions tailored to your needs.
+              Our dedicated team ensures every detail is taken care of,
+              providing you with unparalleled service and support.
               </p>
             </div>
             <div
@@ -67,9 +67,8 @@ function Features() {
             >
               <h2 className="font-weight-bold">Safe and reliable</h2>
               <p className="my-4">
-                Duo suas detracto maiestatis ad, commodo lucilius invenire nec
-                ad,
-                <br /> eum et oratio disputationi. Falli lobortis his ad
+              Trustworthy and dependable. Our commitment to safety ensures peace of mind for our clients.
+              With meticulous attention to detail, we prioritize your security and satisfaction.
               </p>
             </div>
           </div>

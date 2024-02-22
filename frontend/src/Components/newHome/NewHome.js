@@ -15,9 +15,9 @@ function NewHome() {
             </div>
           </header>
           <h1
-            data-aos="fade"
+            data-aos="fade-right"
             data-aos-easing="linear"
-            data-aos-duration="8000"
+            data-aos-duration="800"
             data-aos-once="true"
             className="display-3 text-white font-weight-bold my-5"
           >
@@ -28,14 +28,14 @@ function NewHome() {
           <p
             data-aos="fade"
             data-aos-easing="linear"
-            data-aos-duration="8000"
+            data-aos-duration="1000"
             data-aos-once="true"
             className="lead text-white my-4"
           >
-            Lorem ipsum dolor sit amet, id nec enim autem oblique, ei dico
-            mentitum duo.
-            <br /> Illum iusto laoreet his te. Lorem partiendo mel ex. Ad vitae
-            admodum voluptatum per.
+            Welcome to DevForge, where innovation meets excellence in IT services.
+            <br /> Our mission is to revolutionize the way you do business
+            , providing cutting-edge solutions tailored to your unique needs.
+            
           </p>
         </div>
       </div>
